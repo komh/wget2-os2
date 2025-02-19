@@ -1,5 +1,5 @@
 /* Provide a netdb.h header file for systems lacking it (read: MinGW).
-   Copyright (C) 2008-2024 Free Software Foundation, Inc.
+   Copyright (C) 2008-2025 Free Software Foundation, Inc.
    Written by Simon Josefsson.
 
    This file is free software: you can redistribute it and/or modify
@@ -99,12 +99,11 @@ struct addrinfo
 # ifndef AI_CANONNAME
 #  define AI_CANONNAME  0x0002  /* Request for canonical name.  */
 # endif
-# ifndef AI_NUMERICSERV
-#  define AI_NUMERICSERV        0x0400  /* Don't use name resolution.  */
+# ifndef AI_NUMERICHOST
+#  define AI_NUMERICHOST 0x0004  /* Return numeric host address as name.  */
 # endif
-
-# if 0
-#  define AI_NUMERICHOST        0x0004  /* Don't use name resolution.  */
+# ifndef AI_NUMERICSERV
+#  define AI_NUMERICSERV 0x0400  /* Return service number as service name.  */
 # endif
 
 /* These symbolic constants are required to be present by POSIX, but
